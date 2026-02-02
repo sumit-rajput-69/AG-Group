@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AG GROUP Youth Organization Bihar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+
+        section {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .join-form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input,
+        button {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+        }
+
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>AG GROUP Youth Organization Bihar</h1>
+        <p>Empowering Youth for a Better Tomorrow</p>
+    </header>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#join">Join Us</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="home">
+        <h2>Welcome to AG GROUP</h2>
+        <p>We are a vibrant youth organization in Bihar dedicated to skill-building, community service, and leadership
+            development. Join us to make a difference!</p>
+        <img src="logo.png" alt="AG GROUP Logo" style="width: 200px; display: block; margin: auto;">
+        <!-- Replace with your logo -->
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Founded in Bihar, AG GROUP focuses on youth empowerment through workshops, events, and networking. Our
+            mission is to create opportunities for growth and positive change.</p>
+        <ul>
+            <li>Skill Development Programs</li>
+            <li>Community Outreach</li>
+            <li>Leadership Training</li>
+        </ul>
+    </section>
+
+    <section id="join">
+        <h2>Join AG GROUP</h2>
+        <p>Become a member today! Joining fee: ₹20 (one-time payment to support our initiatives).</p>
+        <div class="join-form">
+            <form id="joinForm">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" required>
+
+                <label for="payment">Payment Method (Mock - Integrate Razorpay for Real):</label>
+                <input type="text" id="payment" placeholder="Enter UPI ID or Card Details" required>
+
+                <button type="submit">Pay ₹20 and Join</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: info@aggroupbihar.org | Phone: +91-XXXXXXXXXX</p>
+        <form>
+            <label for="message">Message:</label>
+            <textarea id="message" rows="4" style="width: 100%;"></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 AG GROUP Youth Organization Bihar. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('joinForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Thank you for joining! Your ₹20 payment is processed (mock). Welcome to AG GROUP!');
+            // In real implementation, integrate payment API here (e.g., Razorpay SDK)
+        });
+    </script>
+</body>
+
+</html>
