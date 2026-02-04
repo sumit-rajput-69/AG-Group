@@ -1,60 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AG GROUP Youth Organization Bihar</title>
+    <title>AG GROUP Youth Union Bihar</title>
 
     <style>
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
-            background-color: #f5f5f5;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
         }
 
-        /* ===== HEADER WITH BACKGROUND IMAGE ===== */
+        /* ===== CLEAN HEADER ===== */
         header {
             background-image: url("studentunionlogo.jpeg");
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
 
-            color: white;
+            height: 280px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            padding: 100px 20px;
+
+            color: #ffffff;
             position: relative;
+            overflow: hidden;
         }
 
-        /* Dark overlay for text clarity */
+        /* blurred background */
         header::before {
             content: "";
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.55);
+            inset: 0;
+            background-image: inherit;
+            background-size: cover;
+            background-position: center;
+            filter: blur(6px);
+            transform: scale(1.1);
+            z-index: 0;
         }
 
-        header h1,
-        header p {
-            position: relative;
+        /* dark overlay */
+        header::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
             z-index: 1;
         }
 
+        header .header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            margin-top: 10px;
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        /* ===== NAVBAR ===== */
         nav {
-            background-color: #333;
-            color: white;
+            background-color: #2f2f2f;
             padding: 12px;
             text-align: center;
         }
 
         nav a {
             color: white;
-            margin: 0 15px;
             text-decoration: none;
+            margin: 0 15px;
             font-weight: bold;
         }
 
@@ -62,26 +87,27 @@
             text-decoration: underline;
         }
 
+        /* ===== SECTIONS ===== */
         section {
-            padding: 30px 20px;
             max-width: 900px;
             margin: auto;
-        }
-
-        .join-form {
-            background-color: white;
-            padding: 20px;
+            padding: 30px 20px;
+            background: white;
+            margin-top: 20px;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        input,
-        textarea,
-        button {
+        .logo {
             display: block;
+            margin: 20px auto;
+            width: 180px;
+        }
+
+        /* ===== FORM ===== */
+        input, textarea, button {
             width: 100%;
-            margin: 10px 0;
             padding: 10px;
+            margin: 10px 0;
             font-size: 15px;
         }
 
@@ -97,18 +123,24 @@
             background-color: #218838;
         }
 
+        /* ===== FOOTER ===== */
         footer {
+            margin-top: 30px;
+            background-color: #2f2f2f;
+            color: white;
             text-align: center;
             padding: 15px;
-            background-color: #333;
-            color: white;
-            margin-top: 20px;
         }
 
-        img.logo {
-            width: 200px;
-            display: block;
-            margin: 20px auto;
+        /* ===== MOBILE ===== */
+        @media (max-width: 600px) {
+            header {
+                height: 220px;
+            }
+
+            header h1 {
+                font-size: 26px;
+            }
         }
     </style>
 </head>
@@ -117,11 +149,13 @@
 
     <!-- HEADER -->
     <header>
-        <h1>AG GROUP Youth Organization Bihar</h1>
-        <p>Empowering Youth for a Better Tomorrow</p>
+        <div class="header-content">
+            <h1>AG GROUP Youth Union Bihar</h1>
+            <p>Empowering Youth for a Better Tomorrow</p>
+        </div>
     </header>
 
-    <!-- NAVBAR -->
+    <!-- NAV -->
     <nav>
         <a href="#home">Home</a>
         <a href="#about">About Us</a>
@@ -137,70 +171,55 @@
             community service, and leadership development.
         </p>
 
-        <img src="AGgrouploho.jpeg" alt="AG GROUP Logo" class="logo">
+        <img src="AGgrouploho.jpeg" alt="AG Group Logo" class="logo">
     </section>
 
     <!-- ABOUT -->
     <section id="about">
         <h2>About Us</h2>
         <p>
-            Founded in Bihar, AG GROUP focuses on youth empowerment through workshops,
-            events, and networking. Our mission is to create opportunities for growth
-            and positive change.
+            AG GROUP Youth Union Bihar works for student empowerment, leadership
+            development, and social awareness across Bihar.
         </p>
         <ul>
-            <li>Skill Development Programs</li>
-            <li>Community Outreach</li>
-            <li>Leadership Training</li>
+            <li>Skill Development</li>
+            <li>Youth Leadership</li>
+            <li>Community Service</li>
         </ul>
     </section>
 
     <!-- JOIN -->
     <section id="join">
-        <h2>Join AG GROUP</h2>
-        <p>Joining fee: ₹20 (one-time contribution)</p>
+        <h2>Join Us</h2>
+        <p>One-time joining fee: ₹20</p>
 
-        <div class="join-form">
-            <form id="joinForm">
-                <label>Full Name:</label>
-                <input type="text" required>
-
-                <label>Email:</label>
-                <input type="email" required>
-
-                <label>Phone:</label>
-                <input type="tel" required>
-
-                <label>Payment Method (Mock):</label>
-                <input type="text" placeholder="UPI / Card Details" required>
-
-                <button type="submit">Pay ₹20 and Join</button>
-            </form>
-        </div>
+        <form id="joinForm">
+            <input type="text" placeholder="Full Name" required>
+            <input type="email" placeholder="Email" required>
+            <input type="tel" placeholder="Phone" required>
+            <input type="text" placeholder="UPI / Payment Ref (Mock)" required>
+            <button type="submit">Pay ₹20 & Join</button>
+        </form>
     </section>
 
     <!-- CONTACT -->
     <section id="contact">
         <h2>Contact Us</h2>
-        <p>Email: info@aggroupbihar.org | Phone: +91-XXXXXXXXXX</p>
+        <p>Email: info@aggroupbihar.org</p>
 
-        <form>
-            <label>Message:</label>
-            <textarea rows="4"></textarea>
-            <button type="submit">Send</button>
-        </form>
+        <textarea rows="4" placeholder="Your Message"></textarea>
+        <button>Send Message</button>
     </section>
 
     <!-- FOOTER -->
     <footer>
-        <p>&copy; 2023 AG GROUP Youth Organization Bihar. All rights reserved.</p>
+        © 2023 AG GROUP Youth Union Bihar | All Rights Reserved
     </footer>
 
-    <!-- SCRIPT -->
     <script>
-        document.getElementById("joinForm").addEventListener("submit", function (e) {
+        document.getElementById("joinForm").addEventListener("submit", function(e) {
             e.preventDefault();
-            alert("Thank you for joining AG GROUP! ₹20 payment processed (mock).");
+            alert("Welcome to AG GROUP! Payment received (mock).");
         });
     </script>
 
