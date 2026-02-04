@@ -5,28 +5,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AG GROUP Youth Organization Bihar</title>
+
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color:      }
+            background-color: #f5f5f5;
+        }
 
-header {
-  background-image: url("studentunionlogo.jpeg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+        /* ===== HEADER WITH BACKGROUND IMAGE ===== */
+        header {
+            background-image: url("studentunionlogo.jpeg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
 
-  color: white;
-  text-align: center;
-  padding: 80px 20px;       
-} 
-       
-    nav {
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            position: relative;
+        }
+
+        /* Dark overlay for text clarity */
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.55);
+        }
+
+        header h1,
+        header p {
+            position: relative;
+            z-index: 1;
+        }
+
+        nav {
             background-color: #333;
             color: white;
-            padding: 10px;
+            padding: 12px;
             text-align: center;
         }
 
@@ -34,11 +55,16 @@ header {
             color: white;
             margin: 0 15px;
             text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
         }
 
         section {
-            padding: 20px;
-            max-width: 800px;
+            padding: 30px 20px;
+            max-width: 900px;
             margin: auto;
         }
 
@@ -50,11 +76,13 @@ header {
         }
 
         input,
+        textarea,
         button {
             display: block;
             width: 100%;
             margin: 10px 0;
             padding: 10px;
+            font-size: 15px;
         }
 
         button {
@@ -62,22 +90,38 @@ header {
             color: white;
             border: none;
             cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #218838;
         }
 
         footer {
             text-align: center;
-            padding: 10px;
+            padding: 15px;
             background-color: #333;
             color: white;
+            margin-top: 20px;
+        }
+
+        img.logo {
+            width: 200px;
+            display: block;
+            margin: 20px auto;
         }
     </style>
 </head>
 
 <body>
+
+    <!-- HEADER -->
     <header>
         <h1>AG GROUP Youth Organization Bihar</h1>
         <p>Empowering Youth for a Better Tomorrow</p>
     </header>
+
+    <!-- NAVBAR -->
     <nav>
         <a href="#home">Home</a>
         <a href="#about">About Us</a>
@@ -85,17 +129,25 @@ header {
         <a href="#contact">Contact</a>
     </nav>
 
+    <!-- HOME -->
     <section id="home">
         <h2>Welcome to AG GROUP</h2>
-        <p>We are a vibrant youth organization in Bihar dedicated to skill-building, community service, and leadership
-            development. Join us to make a difference!</p>
-      <img src="AGgrouploho.jpeg"alt="AG GROUP Logo" style="width:200px; display:block; margin:auto;">        <!-- Replace with your logo -->
+        <p>
+            We are a vibrant youth organization in Bihar dedicated to skill-building,
+            community service, and leadership development.
+        </p>
+
+        <img src="AGgrouploho.jpeg" alt="AG GROUP Logo" class="logo">
     </section>
 
+    <!-- ABOUT -->
     <section id="about">
         <h2>About Us</h2>
-        <p>Founded in Bihar, AG GROUP focuses on youth empowerment through workshops, events, and networking. Our
-            mission is to create opportunities for growth and positive change.</p>
+        <p>
+            Founded in Bihar, AG GROUP focuses on youth empowerment through workshops,
+            events, and networking. Our mission is to create opportunities for growth
+            and positive change.
+        </p>
         <ul>
             <li>Skill Development Programs</li>
             <li>Community Outreach</li>
@@ -103,49 +155,54 @@ header {
         </ul>
     </section>
 
+    <!-- JOIN -->
     <section id="join">
         <h2>Join AG GROUP</h2>
-        <p>Become a member today! Joining fee: ₹20 (one-time payment to support our initiatives).</p>
+        <p>Joining fee: ₹20 (one-time contribution)</p>
+
         <div class="join-form">
             <form id="joinForm">
-                <label for="name">Full Name:</label>
-                <input type="text" id="name" required>
+                <label>Full Name:</label>
+                <input type="text" required>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" required>
+                <label>Email:</label>
+                <input type="email" required>
 
-                <label for="phone">Phone:</label>
-                <input type="tel" id="phone" required>
+                <label>Phone:</label>
+                <input type="tel" required>
 
-                <label for="payment">Payment Method (Mock - Integrate Razorpay for Real):</label>
-                <input type="text" id="payment" placeholder="Enter UPI ID or Card Details" required>
+                <label>Payment Method (Mock):</label>
+                <input type="text" placeholder="UPI / Card Details" required>
 
                 <button type="submit">Pay ₹20 and Join</button>
             </form>
         </div>
     </section>
 
+    <!-- CONTACT -->
     <section id="contact">
         <h2>Contact Us</h2>
         <p>Email: info@aggroupbihar.org | Phone: +91-XXXXXXXXXX</p>
+
         <form>
-            <label for="message">Message:</label>
-            <textarea id="message" rows="4" style="width: 100%;"></textarea>
+            <label>Message:</label>
+            <textarea rows="4"></textarea>
             <button type="submit">Send</button>
         </form>
     </section>
 
+    <!-- FOOTER -->
     <footer>
         <p>&copy; 2023 AG GROUP Youth Organization Bihar. All rights reserved.</p>
     </footer>
 
+    <!-- SCRIPT -->
     <script>
-        document.getElementById('joinForm').addEventListener('submit', function (e) {
+        document.getElementById("joinForm").addEventListener("submit", function (e) {
             e.preventDefault();
-            alert('Thank you for joining! Your ₹20 payment is processed (mock). Welcome to AG GROUP!');
-            // In real implementation, integrate payment API here (e.g., Razorpay SDK)
+            alert("Thank you for joining AG GROUP! ₹20 payment processed (mock).");
         });
     </script>
-</body>
 
-</html><!-- github pages rebuild -->
+</body>
+</html>
